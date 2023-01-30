@@ -5,33 +5,33 @@ import org.junit.jupiter.api.Test;
 
 public class StatsServiceTest {
 
-    int[] sales = { 8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+    long[] sales = { 8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18 };
 
     //Сумма всех продаж:
     @Test
-    public void sumAllSales() {
+    public void testSumAllSales() {
         StatsService service = new StatsService();
 
-        int expectedSum = 180;
-        int actualSum = service.sumAllSales(sales);
+        long expectedSum = 8 + 15 + 13 + 15 + 17 + 20 + 19 + 20 + 7 + 14 + 14 + 18;
+        long actualSum = service.sumAllSales(sales);
 
         Assertions.assertEquals(expectedSum, actualSum);
     }
 
     //Средняя сумма продаж в месяц:
     @Test
-    public void averageMonthSales() {
+    public void testAverageMonthSales() {
         StatsService service = new StatsService();
 
-        int expectedAverage = 15;
-        int actualAverage = service.averageMonthSales(sales);
+        long expectedAverage = (8 + 15 + 13 + 15 + 17 + 20 + 19 + 20 + 7 + 14 + 14 + 18) / sales.length;
+        long actualAverage = service.averageMonthSales(sales);
 
         Assertions.assertEquals(expectedAverage, actualAverage);
     }
 
     //Номер месяца, в котором был пик продаж, то есть осуществлены продажи на максимальную сумму:
     @Test
-    public void maxMonth(){
+    public void testMaxMonth(){
         StatsService service = new StatsService();
 
         int expectedMaxMonth = 8;
@@ -42,7 +42,7 @@ public class StatsServiceTest {
 
     //Номер месяца, в котором был минимум продаж, то есть осуществлены продажи на минимальную сумму:
     @Test
-    public void minMonth() {
+    public void testMinMonth() {
         StatsService service = new StatsService();
 
         int expectedMinMonth = 9;
@@ -53,7 +53,7 @@ public class StatsServiceTest {
 
     //Количество месяцев, в которых продажи были ниже среднего значения за все месяцы:
     @Test
-    public void amountMonthBelowAverage() {
+    public void testAmountMonthBelowAverage() {
         StatsService service = new StatsService();
 
         int expextedAmountMonthBelow = 5;
@@ -64,7 +64,7 @@ public class StatsServiceTest {
 
     // Количество месяцев, в которых продажи были выше среднего значения за все месяцы:
     @Test
-    public void amountMonthAboveAverage() {
+    public void testAmountMonthAboveAverage() {
         StatsService service = new StatsService();
 
         int expectedAmountMonthAbove = 5;

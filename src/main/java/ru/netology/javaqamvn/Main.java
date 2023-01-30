@@ -4,12 +4,13 @@ import ru.netology.javaqamvn.stats.StatsService;
 
 public class Main {
     public static void main(String[] args) {
+
         StatsService service = new StatsService();
-        int[] sales = { 8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int actualSum = service.sumAllSales(sales);
+        long[] sales = { 8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long actualSum = service.sumAllSales(sales);
         System.out.println("Сумма всех продаж = " + actualSum);
 
-        int averageMonthSales = service.averageMonthSales(sales);
+        long averageMonthSales = service.averageMonthSales(sales);
         System.out.println("Средняя сумма продаж = " +averageMonthSales);
 
         int maxMonth = service.maxMonth(sales);
