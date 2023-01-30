@@ -1,17 +1,21 @@
 package ru.netology.javaqamvn.stats;
 
-import java.util.stream.IntStream;
-
 public class StatsService {
     //Сумма всех продаж:
     public int sumAllSales(int[] sales) {
-        int sum = IntStream.of(sales).sum();
+        int sum = 0;
+        for (int i = 0; i < sales.length; i++) {
+            sum = sum + sales[i];
+        }
         return sum;
     }
 
     //Средняя сумма продаж в месяц:
     public int averageMonthSales(int[] sales) {
-        int sum = IntStream.of(sales).sum();
+        int sum = 0;
+        for (int i = 0; i < sales.length; i++) {
+            sum = sum + sales[i];
+        }
         int avarage = sum / sales.length;
         return avarage;
     }
@@ -44,7 +48,10 @@ public class StatsService {
 
     //Количество месяцев, в которых продажи были ниже среднего значения за все месяцы:
     public int amountMonthBelowAverage(int[] sales) {
-        int sum = IntStream.of(sales).sum();
+        int sum = 0;
+        for (int i = 0; i < sales.length; i++) {
+            sum = sum + sales[i];
+        }
         int average = sum / sales.length;
         int amount = 0;
         for (int sale : sales) {
@@ -57,7 +64,10 @@ public class StatsService {
 
     // Количество месяцев, в которых продажи были выше среднего значения за все месяцы:
     public int amountMonthAboveAverage(int[] sales) {
-        int sum = IntStream.of(sales).sum();
+        int sum = 0;
+        for (int i = 0; i < sales.length; i++) {
+            sum = sum + sales[i];
+        }
         int average = sum / sales.length;
         int amount = 0;
         for (int sale : sales) {
